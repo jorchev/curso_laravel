@@ -7,6 +7,7 @@
     <title>Acerca de mi</title>
 </head>
 <body>
+    @include('partials.navigation')
     <h1>Acerca de mi</h1>
 </body>
 </html>
