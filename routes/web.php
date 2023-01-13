@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+// laravel9.test => welcome
+// laravel9.test/contacto => contact
+// laravel9.test/blog => blog
+// laravel9..test/acerca-de-mi => about
+
+Route::view('/','welcome');
+Route::view('/contacto','contact');
+Route::view('/blog','blog');
+Route::view('/acerca-de','about');
