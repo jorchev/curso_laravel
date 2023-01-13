@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 // laravel9.test/blog => blog
 // laravel9..test/acerca-de-mi => about
 
-Route::view('/','welcome');
-Route::view('/contacto','contact');
-Route::view('/blog','blog');
-Route::view('/acerca-de','about');
+Route::view('/','welcome')->name('home');
+Route::view('/contact','contact')->name('contact');
+Route::view('/blog','blog')->name('blog');
+Route::view('/about','about')->name('about');
