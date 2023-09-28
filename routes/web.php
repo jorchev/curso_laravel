@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-// laravel9.test => welcome
-// laravel9.test/contacto => contact
-// laravel9.test/blog => blog
-// laravel9.test/acerca-de-mi => about
-
 Route::view('/','welcome')->name('home');
 Route::view('/contact','contact')->name('contact');
-Route::view('/blog','blog')->name('blog');
+Route::get('/blog', [PostController::class, 'index'])->name('blog');
 Route::view('/about','about')->name('about');
