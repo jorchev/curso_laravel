@@ -1,7 +1,4 @@
-<x-layouts.app meta-description="Contact meta description">
-    <x-slot name="title">
-        Contact
-    </x-slot>
+<x-layouts.app title="Contact" meta-description="Contact meta description">
     <h1>Contacto</h1>
 </x-layouts.app>
 
