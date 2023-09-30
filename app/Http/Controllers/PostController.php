@@ -16,4 +16,16 @@ class PostController extends Controller
     function show(Post $post){
         return view('posts.show', ['post' => $post]);
     }
+    /*
+    function show($post){
+        return view('posts.show', ['post' => Post::findOrFail($post)]);
+    }
+    */
+    function create(){
+        return view('posts.create');
+    }
+    function store(){
+        return 'Form processing...';
+    }
+
 }
