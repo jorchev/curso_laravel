@@ -25,6 +25,12 @@ class PostController extends Controller
         return view('posts.create');
     }
     function store(Request $request){
+
+        $request->validate([
+            'title' => ['required','min:5'],
+            'body' => ['required']
+        ]);
+
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
