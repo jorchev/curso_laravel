@@ -13,6 +13,7 @@ class PostController extends Controller
         $posts = Post::get();
         return view('posts.index', ['posts' => $posts]);
     }
+
     function show(Post $post){
         return view('posts.show', ['post' => $post]);
     }
@@ -21,9 +22,11 @@ class PostController extends Controller
         return view('posts.show', ['post' => Post::findOrFail($post)]);
     }
     */
+
     function create(){
         return view('posts.create');
     }
+
     function store(Request $request){
 
         $request->validate([
@@ -40,6 +43,16 @@ class PostController extends Controller
 
         // return redirect()->route('posts.index');
         return to_route('posts.index');
+    }
+
+    function edit(Post $post){
+        return view('posts.edit', ['post' => $post]);
+    }
+
+    function update(Request $request){
+
+        return 'Post edit';
+
     }
 
 }
