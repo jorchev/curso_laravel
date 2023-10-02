@@ -49,9 +49,21 @@ class PostController extends Controller
         return view('posts.edit', ['post' => $post]);
     }
 
-    function update(Request $request){
+    function update(Request $request, Post $post){ // function update(Request $request, $post){
 
-        return 'Post edit';
+        $request->validate([
+            'title' => ['required','min:5'],
+            'body' => ['required']
+        ]);
+
+        // $post = Post::find($post);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        session()->flash('status','Post updated!');
+
+        return to_route('posts.show', $post);
 
     }
 
