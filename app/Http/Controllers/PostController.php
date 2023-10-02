@@ -29,10 +29,8 @@ class PostController extends Controller
     }
 
     function store(SavePostRequest $request){
-
         Post::create( $request->validated() );
         return to_route('posts.index')->with('status','Post created!');
-
     }
 
     function edit(Post $post){
@@ -40,10 +38,13 @@ class PostController extends Controller
     }
 
     function update(SavePostRequest $request, Post $post){ // function update(Request $request, $post){
-
         $post->update( $request->validated() );
         return to_route('posts.show', $post)->with('status','Post updated!');
+    }
 
+    function destroy(Post $post){
+        $post->delete();
+        return to_route('posts.index')->with('status','Post deleted!');
     }
 
 }
